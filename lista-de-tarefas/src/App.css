@@ -32,8 +32,60 @@ input {
   box-sizing: border-box;
 }
 
+.todo-list {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #555;
+
+}
+
+
+
 .todo {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #333974;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+  margin: 2px;
+
+}
+
+button:hover {
+  opacity: 1;
+}
+
+.complete {
+  background-color: #2b752b;
+}
+
+.remove {
+  background-color: #a70a17;
+}
+
+
+.todo-form {
+  padding-bottom: 1.5rem;
+}
+
+input, select {
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  width: 100%;
 }
