@@ -27,6 +27,9 @@ function App() {
     },
   ]);
 
+  const [copyReserve, setCopyReserve] = useState([]);
+  const [showButton, setShowButton] = useState(false);
+
   const [search, setSearch] = useState("");
 
   const [filter, setFilter] = useState("All");
@@ -65,11 +68,22 @@ function App() {
     setTodos(newTodos);
   };
 
+  const deleteAll = () => {
+    setCopyReserve([...todos]);
+    setTodos([]);
+    setShowButton(true);
+  };
+
+  const restoreList = () => {
+    setTodos([...copyReserve]);
+    setShowButton(false);
+  };
+
   return (
     <div className="app">
       <h1>Lista de Tarefas</h1>
       <Search search={search} setSearch={setSearch} />
-      <Filter filter={filter} setFilter={setFilter}  setSort={setSort} />
+      <Filter filter={filter} setFilter={setFilter} setSort={setSort} />
       <div className="todo-list">
         {todos
           .filter((todo) =>
@@ -80,9 +94,9 @@ function App() {
               : !todo.isCompleted
           )
           .sort((a, b) =>
-          sort === "Asc"
-          ? a.text.localeCompare(b.text)
-          : b.text.localeCompare(a.text)
+            sort === "Asc"
+              ? a.text.localeCompare(b.text)
+              : b.text.localeCompare(a.text)
           )
           .filter((todo) =>
             todo.text.toLowerCase().includes(search.toLowerCase())
@@ -95,7 +109,14 @@ function App() {
               completeTodo={completeTodo}
             />
           ))}
+        ,
+        {!showButton ? (
+          <button onClick={deleteAll}>Deletar tudo</button>
+        ) : (
+          <button onClick={restoreList}>Restaurar Lista</button>
+        )}
       </div>
+
       <TodoForm addTodo={addTodo} />
     </div>
   );
