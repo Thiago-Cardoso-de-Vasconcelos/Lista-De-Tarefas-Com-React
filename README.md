@@ -1,5 +1,5 @@
 <h1 align="center">Lista de Tarefas (ToDo App)</h1>
-![GitHub repo size](https://img.shields.io/github/repo-size/Thiago-Cardoso-de-Vasconcelos/Lista-De-Tarefas-Com-React)
+[GitHub repo size](https://img.shields.io/github/repo-size/Thiago-Cardoso-de-Vasconcelos/Lista-De-Tarefas-Com-React)
 
 # Descrição do projeto
 Este é um aplicativo simples de lista de tarefas desenvolvido em React. Ele permite que você adicione, remova, conclua, filtre e pesquise tarefas em sua lista. Você também pode desfazer a exclusão de tarefas anteriormente removidas.
