@@ -1,6 +1,7 @@
 <h1 align="center">Lista de Tarefas (ToDo App)</h1>
-
+<div align="center">
 ![Static Badge](https://img.shields.io/badge/Status-Em_desenvolvimento-gree)  ![GitHub repo size](https://img.shields.io/github/repo-size/Thiago-Cardoso-de-Vasconcelos/Lista-De-Tarefas-Com-React)
+</div>
 
 
 # Descrição do projeto
