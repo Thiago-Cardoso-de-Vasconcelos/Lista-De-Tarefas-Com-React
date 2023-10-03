@@ -1,5 +1,7 @@
 <h1 align="center">Lista de Tarefas (ToDo App)</h1>
-[GitHub repo size](https://img.shields.io/github/repo-size/Thiago-Cardoso-de-Vasconcelos/Lista-De-Tarefas-Com-React)
+
+![GitHub repo size](https://img.shields.io/github/repo-size/Thiago-Cardoso-de-Vasconcelos/Lista-De-Tarefas-Com-React)
+
 
 # Descrição do projeto
 Este é um aplicativo simples de lista de tarefas desenvolvido em React. Ele permite que você adicione, remova, conclua, filtre e pesquise tarefas em sua lista. Você também pode desfazer a exclusão de tarefas anteriormente removidas.
@@ -32,14 +34,14 @@ e selecione abrir com o terminal.
 2.	Agora que o terminal está na pasta desejada,
 clone o repositório para o seu sistema local:
 
-git clone https://github.com/Thiago-Cardoso-de-Vasconcelos/Lista-De-Tarefas-Com-React.git
+```git clone https://github.com/Thiago-Cardoso-de-Vasconcelos/Lista-De-Tarefas-Com-React.git```
 
 3.	Navegue até o diretório do projeto:
-cd lista-de-tarefas
+```cd lista-de-tarefas```
 
 4.	Instale as dependências usando npm ou yarn:
-npm install  ou yarn install 
+```npm install```  ou ```yarn install ```
 
 ## Uso
 Após a instalação das dependências, você pode iniciar o aplicativo com o seguinte comando:
-npm start ou yarn start
+```npm start``` ou ```yarn start```
