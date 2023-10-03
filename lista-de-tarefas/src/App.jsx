@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Todo from "./components/Todo";
 import "./App.css";
 import TodoForm from "./components/TodoForm";
@@ -27,13 +27,36 @@ function App() {
     },
   ]);
 
+  const [search, setSearch] = useState("");
+  const [filter, setFilter] = useState("All");
+  const [sort, setSort] = useState("Asc");
+
   const [copyReserve, setCopyReserve] = useState([]);
   const [showButton, setShowButton] = useState(false);
 
-  const [search, setSearch] = useState("");
+  const [showButtonLength, setshowButtonLength] = useState(true);
+  useEffect(() => {
+    // Atualiza a visibilidade do botão com base no tamanho da lista `todos`
+    if (todos.length <= 1) {
+      setshowButtonLength(false);
+    }
+    if (todos.length > 1) {
+      setshowButtonLength(true);
+    }
+  }, [todos]);
 
-  const [filter, setFilter] = useState("All");
-  const [sort, setSort] = useState("Asc");
+  const [deletedItems, setDeletedItems] = useState([]);
+
+  const [showButtonUndo, setShowButtonUndo] = useState(false);
+  useEffect(() => {
+    // Atualiza a visibilidade do botão com base no tamanho da lista `todos`
+    if (deletedItems.length >= 1) {
+      setShowButtonUndo(true);
+    }
+    if (deletedItems.length < 1) {
+      setShowButtonUndo(false);
+    }
+  }, [deletedItems]);
 
   const addTodo = (text, category) => {
     const newTodos = [
@@ -48,16 +71,37 @@ function App() {
     setTodos(newTodos);
   };
 
-  // const removeTodo= (id) => {
-  //   const newTodos = [ ...todos]
-  //   const filterdTodos = newTodos.filter((todo)=>
-  //   todo.id !== id ? todo : null
-  //   );
-  //   setTodos(filterdTodos);
-  // }
   const removeTodo = (id) => {
-    const filteredTodos = todos.filter((todo) => todo.id !== id);
-    setTodos(filteredTodos);
+    const todoToRemove = todos.find((todo) => todo.id === id);
+    if (todoToRemove) {
+      const filteredTodos = todos.filter((todo) => todo.id !== id);
+      setTodos(filteredTodos);
+
+      // Verifique se o item já está na lista deletedItems antes de adicioná-lo
+      if (!deletedItems.find((item) => item.id === id)) {
+        setDeletedItems((prevDeletedItems) => [
+          todoToRemove,
+          ...prevDeletedItems,
+        ]);
+      }
+    }
+  };
+
+  const returnToList = () => {
+    if (deletedItems.length > 0) {
+      const [lastDeletedTodo, ...restDeletedItems] = deletedItems;
+
+      // Adicione o último item excluído de volta à lista de tarefas
+      setTodos((prevTodos) => [lastDeletedTodo, ...prevTodos]);
+
+      // Atualize a matriz de itens excluídos para conter os itens restantes
+      setDeletedItems(restDeletedItems);
+
+      // Se não houver mais itens excluídos, defina o estado para null
+      if (restDeletedItems.length === -1) {
+        setDeletedItems(null);
+      }
+    }
   };
 
   const completeTodo = (id) => {
@@ -85,6 +129,12 @@ function App() {
       <Search search={search} setSearch={setSearch} />
       <Filter filter={filter} setFilter={setFilter} setSort={setSort} />
       <div className="todo-list">
+        <button
+          style={{ display: showButtonUndo ? "block" : "none" }}
+          onClick={returnToList}
+        >
+          Desfazer
+        </button>
         {todos
           .filter((todo) =>
             filter === "All"
@@ -111,7 +161,12 @@ function App() {
           ))}
         ,
         {!showButton ? (
-          <button onClick={deleteAll}>Deletar tudo</button>
+          <button
+            style={{ display: showButtonLength ? "block" : "none" }}
+            onClick={deleteAll}
+          >
+            Deletar tudo
+          </button>
         ) : (
           <button onClick={restoreList}>Restaurar Lista</button>
         )}
