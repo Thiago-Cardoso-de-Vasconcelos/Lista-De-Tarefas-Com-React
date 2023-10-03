@@ -3,8 +3,6 @@
 ![Static Badge](https://img.shields.io/badge/Status-Em_desenvolvimento-gree) ![GitHub repo size](https://img.shields.io/github/repo-size/Thiago-Cardoso-de-Vasconcelos/Lista-De-Tarefas-Com-React)
 
 # Tópicos
-=================
-
   * [Descrição](#Descrição)
   * [Funcionalidades](#Funcionalidades)
   * [Demonstração](#Demonstração)
