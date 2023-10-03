@@ -11,10 +11,10 @@
   * [Instalação](#Instalação)
 
 
-# Descrição do projeto
+# Descrição
 Este é um aplicativo simples de lista de tarefas desenvolvido em React. Ele permite que você adicione, remova, conclua, filtre e pesquise tarefas em sua lista. Você também pode desfazer a exclusão de tarefas anteriormente removidas.
 
-# Funcionalidades Principais
+# Funcionalidades
 - Adicionar novas tarefas com um título e uma categoria.
 - Remover tarefas individualmente.
 - Marcar tarefas como concluídas ou não concluídas.
@@ -25,7 +25,7 @@ Este é um aplicativo simples de lista de tarefas desenvolvido em React. Ele per
 - Persistência de Dados com localStorage.
 
 
-# Demonstração da aplicação
+# Demonstração
 Em breve!
 Link:
 Resultado: banner
