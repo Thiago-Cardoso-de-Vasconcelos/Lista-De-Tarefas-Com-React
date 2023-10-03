@@ -6,7 +6,8 @@ import Search from "./components/Search";
 import Filter from "./components/Filter";
 
 function App() {
-  const [todos, setTodos] = useState([
+
+  const storedTodos = JSON.parse(localStorage.getItem('Todos')) || [
     {
       id: 1,
       text: "Criar Funcionalidade x no sistema",
@@ -25,13 +26,31 @@ function App() {
       category: "Estudos",
       isCompletd: false,
     },
-  ]);
+
+  ];
+  const storedListasJSON = localStorage.getItem('listas');
+  const storedListas = storedListasJSON ? JSON.parse(storedListasJSON) : {
+    todos: [],
+    copyReserve: [],
+    deletedItems: [],
+  };
+
+  const [todos, setTodos] = useState(storedTodos);
+  const [copyReserve, setCopyReserve] = useState(storedListas.copyReserve);
+  const [deletedItems, setDeletedItems] = useState(storedListas.deletedItems);
+  
+  useEffect(() => {
+    localStorage.setItem('Todos', JSON.stringify(todos));
+    localStorage.setItem('listas', JSON.stringify({ todos, copyReserve, deletedItems }));
+  }, [todos, copyReserve, deletedItems]);
+
+
 
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("All");
   const [sort, setSort] = useState("Asc");
 
-  const [copyReserve, setCopyReserve] = useState([]);
+  
   const [showButton, setShowButton] = useState(false);
 
   const [showButtonLength, setshowButtonLength] = useState(true);
@@ -45,8 +64,7 @@ function App() {
     }
   }, [todos]);
 
-  const [deletedItems, setDeletedItems] = useState([]);
-
+  
   const [showButtonUndo, setShowButtonUndo] = useState(false);
   useEffect(() => {
     // Atualiza a visibilidade do botão com base no tamanho da lista `todos`
@@ -57,6 +75,10 @@ function App() {
       setShowButtonUndo(false);
     }
   }, [deletedItems]);
+
+
+
+
 
   const addTodo = (text, category) => {
     const newTodos = [
@@ -78,14 +100,16 @@ function App() {
       setTodos(filteredTodos);
 
       // Verifique se o item já está na lista deletedItems antes de adicioná-lo
-      if (!deletedItems.find((item) => item.id === id)) {
-        setDeletedItems((prevDeletedItems) => [
-          todoToRemove,
-          ...prevDeletedItems,
-        ]);
-      }
+    if (!deletedItems.find((item) => item.id === id)) {
+      // Adicione o item à lista deletedItems, mas verifique o tamanho máximo
+      const updatedDeletedItems = [
+        todoToRemove,
+        ...deletedItems.slice(0, 1) // Mantenha no máximo 4 itens
+      ];
+      setDeletedItems(updatedDeletedItems);
     }
-  };
+  }
+};
 
   const returnToList = () => {
     if (deletedItems.length > 0) {
