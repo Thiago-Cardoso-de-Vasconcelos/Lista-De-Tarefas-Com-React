@@ -5,9 +5,9 @@
 # Tópicos
 =================
 
-  * [Descrição do projeto](#Descrição)
-  * [Funcionalidades Principais](#Funcionalidades)
-  * [Demonstração da aplicação](#Demonstração)
+  * [Descrição](#Descrição)
+  * [Funcionalidades](#Funcionalidades)
+  * [Demonstração](#Demonstração)
   * [Instalação](#Instalação)
 
 
