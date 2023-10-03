@@ -2,7 +2,7 @@
 
 ![Static Badge](https://img.shields.io/badge/Status-Em_desenvolvimento-gree) ![GitHub repo size](https://img.shields.io/github/repo-size/Thiago-Cardoso-de-Vasconcelos/Lista-De-Tarefas-Com-React)
 
-#Tópicos
+# Tópicos
 =================
 
   * [Descrição do projeto](#Descrição)
@@ -11,10 +11,10 @@
   * [Instalação](#Instalação)
 
 
-#Descrição do projeto
+# Descrição do projeto
 Este é um aplicativo simples de lista de tarefas desenvolvido em React. Ele permite que você adicione, remova, conclua, filtre e pesquise tarefas em sua lista. Você também pode desfazer a exclusão de tarefas anteriormente removidas.
 
-#Funcionalidades Principais
+# Funcionalidades Principais
 - Adicionar novas tarefas com um título e uma categoria.
 - Remover tarefas individualmente.
 - Marcar tarefas como concluídas ou não concluídas.
@@ -25,12 +25,12 @@ Este é um aplicativo simples de lista de tarefas desenvolvido em React. Ele per
 - Persistência de Dados com localStorage.
 
 
-#Demonstração da aplicação
+# Demonstração da aplicação
 Em breve!
 Link:
 Resultado: banner
 
-#Instalação
+# Instalação
 ### Pré-requisitos
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
