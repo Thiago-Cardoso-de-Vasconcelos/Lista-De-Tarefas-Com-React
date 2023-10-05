@@ -24,9 +24,12 @@ Este é um aplicativo simples de lista de tarefas desenvolvido em React. Ele per
 
 
 # Demonstração
-Em breve!
-Link:
-Resultado: banner
+[Clique aqui para ver!](https://thiago-cardoso-de-vasconcelos.github.io/Lista-De-Tarefas-Com-React/)
+
+Resultado:
+<p align="center">
+  <img src="public/readme_demonstracao.gif">
+</p>
 
 # Instalação
 ### Pré-requisitos
