@@ -5,6 +5,11 @@ import TodoForm from "./components/TodoForm";
 import Search from "./components/Search";
 import Filter from "./components/Filter";
 
+import CachedIcon from '@mui/icons-material/Cached';
+
+
+import DeleteSweepSharpIcon from '@mui/icons-material/DeleteSweepSharp';
+
 function App() {
 
   const storedTodos = JSON.parse(localStorage.getItem('Todos')) || [
@@ -150,14 +155,18 @@ function App() {
   return (
     <div className="app">
       <h1>Lista de Tarefas</h1>
-      <Search search={search} setSearch={setSearch} />
+      <TodoForm addTodo={addTodo} />
+      <div className="conteiner-filter-search">
       <Filter filter={filter} setFilter={setFilter} setSort={setSort} />
+      <Search search={search} setSearch={setSearch} />
+      </div>
+
       <div className="todo-list">
         <button
-          style={{ display: showButtonUndo ? "block" : "none" }}
+          style={{ display: showButtonUndo ? "block" : "none", margin:"auto"}}
           onClick={returnToList}
         >
-          Desfazer
+         <CachedIcon/>
         </button>
         {todos
           .filter((todo) =>
@@ -184,19 +193,22 @@ function App() {
             />
           ))}
         ,
+
+        <div className="container-button-delete-all">
         {!showButton ? (
           <button
-            style={{ display: showButtonLength ? "block" : "none" }}
+            style={{ display: showButtonLength ? "flex" : "none", gap:"3px"}}
             onClick={deleteAll}
           >
-            Deletar tudo
+            <DeleteSweepSharpIcon/> Deletar tudo
           </button>
         ) : (
-          <button onClick={restoreList}>Restaurar Lista</button>
+          <button onClick={restoreList}><CachedIcon/>   Restaurar Lista</button>
         )}
+        </div>
       </div>
 
-      <TodoForm addTodo={addTodo} />
+    
     </div>
   );
 }
