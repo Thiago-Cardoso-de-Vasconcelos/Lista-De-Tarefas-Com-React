@@ -52,3 +52,10 @@ clone o repositório para o seu sistema local:
 ### Uso
 Após a instalação das dependências, você pode iniciar o aplicativo com o seguinte comando:
 ```npm start``` ou ```yarn start```
+
+# 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,vite,react,materialui)](https://skillicons.dev)
+
