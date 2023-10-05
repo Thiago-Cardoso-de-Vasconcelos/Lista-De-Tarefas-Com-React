@@ -59,5 +59,5 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 [![My Skills](https://skillicons.dev/icons?i=js,html,css,react,materialui)](https://skillicons.dev)
 
-- [React](https://pt-br.reactjs.org/)
+- [React](https://pt-br.reactjs.org/)[![My Skills](https://skillicons.dev/icons?i=react)]()
 - [Mui](https://mui.com/)
