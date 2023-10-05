@@ -57,7 +57,5 @@ Após a instalação das dependências, você pode iniciar o aplicativo com o se
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
-[![My Skills](https://skillicons.dev/icons?i=js,html,css,react,materialui)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,vite,react,materialui)](https://skillicons.dev)
 
-##React [![My Skills](https://skillicons.dev/icons?i=react)]((https://pt-br.reactjs.org/)
-- [Mui](https://mui.com/)
