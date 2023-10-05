@@ -28,7 +28,7 @@ Este é um aplicativo simples de lista de tarefas desenvolvido em React. Ele per
 
 Resultado:
 <p align="center">
-  <img  width "600" src="lista-de-tarefas/public/readme_demonstracao.gif">
+  <img  width "800" src="lista-de-tarefas/public/readme_demonstracao.gif">
 </p>
 
 # Instalação
