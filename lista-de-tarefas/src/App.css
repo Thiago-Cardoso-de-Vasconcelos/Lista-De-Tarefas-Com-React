@@ -79,7 +79,8 @@ button:hover {
 }
 
 .todo-form {
-  display: flex;  
+  display: flex;
+  
   align-items: center;
   padding-bottom: 1.5rem; 
   border-bottom: 1px solid;
@@ -87,11 +88,17 @@ button:hover {
 }
 
 .form {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  gap: 18px;
+   display: flex;
+   width: 100%;
+  
+  gap: 10px;
   align-items: end;
+}
+
+.conteiner-form-button{
+  display: flex;
+  justify-content: space-between;
+  gap:10px;
 }
 
 
@@ -104,6 +111,7 @@ input, select {
 }
 
 .conteiner-filter-search{
+  position: relative;
   display: flex;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -111,22 +119,51 @@ input, select {
 
 .filter {
   display: flex;
-
-}
+  justify-content: space-between;
+  align-items: center;
+ }
 
 .filter-options {
   display: flex;
-  background-color: #2b752b;
   gap: 3rem;
 }
 
 .filter-options-status {
   display: flex;
-  width: 150px;
+  min-width: 150px;
+  width: 100%;
   align-items: center;
   gap: 6px;
   
 }
+
+@media (max-width: 730px) {
+  .conteiner-filter-search{
+    flex-direction: column;
+  
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  .conteiner-form-button{
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter {
+     flex-direction: column;
+  }
+  .conteiner-form-button{
+    flex-direction: column;
+  }
+
+}
+
+
+
 .alphabetical-order{
   display: flex;
   align-items: center;

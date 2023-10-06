@@ -12,6 +12,7 @@ const Filter = ({ filter, setFilter, setSort }) => {
         <div className="filter-options-status">
           <FilterAltIcon />
           <NativeSelect
+            style={{ width:'100%', margin: 'auto'}} 
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
            >

@@ -24,16 +24,16 @@ const TodoForm = ({ addTodo }) => {
     <div className="todo-form">
       <form className="form" onSubmit={handleSubmit}>
         <TextField
-          style={{ width: '320px' }}      
+          style={{minWidth: '150px', width:'100%' }}      
           label="Digite sua tarefa!"
           variant="standard"
           value={valeu}
           onChange={(e) => setValue(e.target.value)}
         />
         
-        <div>
-        
+        <div className="conteiner-form-button">        
         <NativeSelect
+          style={{ minWidth: '100px'}} 
           value={category}
           onChange={(e) => setCategory(e.target.value)}
         >
@@ -42,11 +42,11 @@ const TodoForm = ({ addTodo }) => {
           <option value="Trabalho">Trabalho</option>
           <option value="Estudo">Estudo</option>
         </NativeSelect>
-        </div>
+       
       
 
         <Button
-         style={{ whiteSpace: 'nowrap'}}           
+         style={{ whiteSpace: 'nowrap', minWidth: '120px'  }}           
           size="small"
           variant="contained"
           endIcon={<SendIcon />}
@@ -54,6 +54,7 @@ const TodoForm = ({ addTodo }) => {
         >
           Criar tarefa
         </Button>
+        </div>
         
       </form>
     </div>

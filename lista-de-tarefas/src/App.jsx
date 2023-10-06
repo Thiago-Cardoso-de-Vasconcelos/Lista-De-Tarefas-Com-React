@@ -1,14 +1,18 @@
 import { useEffect, useState } from "react";
-import Todo from "./components/Todo";
+
 import "./App.css";
+
+import Todo from "./components/Todo";
 import TodoForm from "./components/TodoForm";
 import Search from "./components/Search";
 import Filter from "./components/Filter";
 
-import CachedIcon from '@mui/icons-material/Cached';
+import CachedIcon from "@mui/icons-material/Cached";
+import DeleteSweepSharpIcon from "@mui/icons-material/DeleteSweepSharp";
 
 
-import DeleteSweepSharpIcon from '@mui/icons-material/DeleteSweepSharp';
+
+
 
 function App() {
 
@@ -57,8 +61,8 @@ function App() {
 
   
   const [showButton, setShowButton] = useState(false);
-
   const [showButtonLength, setshowButtonLength] = useState(true);
+
   useEffect(() => {
     // Atualiza a visibilidade do botão com base no tamanho da lista `todos`
     if (todos.length <= 1) {
@@ -80,8 +84,6 @@ function App() {
       setShowButtonUndo(false);
     }
   }, [deletedItems]);
-
-
 
 
 
@@ -133,13 +135,6 @@ function App() {
     }
   };
 
-  const completeTodo = (id) => {
-    const newTodos = [...todos];
-    newTodos.map((todo) =>
-      todo.id === id ? (todo.isCompleted = !todo.isCompleted) : todo
-    );
-    setTodos(newTodos);
-  };
 
   const deleteAll = () => {
     setCopyReserve([...todos]);
@@ -151,6 +146,16 @@ function App() {
     setTodos([...copyReserve]);
     setShowButton(false);
   };
+
+  const completeTodo = (id) => {
+    const newTodos = [...todos];
+    newTodos.map((todo) =>
+      todo.id === id ? (todo.isCompleted = !todo.isCompleted) : todo
+    );
+    setTodos(newTodos);
+  };
+
+
 
   return (
     <div className="app">
@@ -194,18 +199,31 @@ function App() {
           ))}
         ,
 
-        <div className="container-button-delete-all">
+        {/* <ButtonAll
+        deleteAll={deleteAll}
+        restoreLis={restoreList}
+        showButton={showButton}
+        showButtonLength={showButtonLength}   
+       
+        /> */}
+
+
+      <div className="container-button-delete-all">
         {!showButton ? (
           <button
-            style={{ display: showButtonLength ? "flex" : "none", gap:"3px"}}
+            style={{ display: showButtonLength ? "flex" : "none", gap: "3px" }}
             onClick={deleteAll}
           >
-            <DeleteSweepSharpIcon/> Deletar tudo
+            <DeleteSweepSharpIcon /> Deletar tudo
           </button>
         ) : (
-          <button onClick={restoreList}><CachedIcon/>   Restaurar Lista</button>
+          <button onClick={restoreList}>
+            <CachedIcon /> Restaurar Lista
+          </button>
         )}
-        </div>
+      </div>
+   
+        
       </div>
 
     
